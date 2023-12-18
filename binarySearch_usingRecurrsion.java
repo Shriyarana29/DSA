@@ -11,6 +11,7 @@ public class binarySearch {
         }
         System.out.println("Enter item to be searched");
         int item = sc.nextInt();
+        //binary(arr, item, 0, n-1);
         int result = binarySearch(arr,item, 0, n-1 );
         if(result==-1){
             System.out.println("The element is not present");
@@ -34,4 +35,21 @@ public class binarySearch {
         }
         return -1;
     }
+    public static void binary(int arr[], int item ,int first, int last){  
+        int mid = (first + last)/2;  
+        while( first <= last ){  
+           if ( arr[mid] < item ){  
+             first = mid + 1;     
+           }else if ( arr[mid] == item ){  
+             System.out.println("Element is found at index: " + mid);  
+             break;  
+           }else{  
+              last = mid - 1;  
+           }  
+           mid = (first + last)/2;  
+        }  
+        if ( first > last ){  
+           System.out.println("Element is not found!");  
+        }  
+      }
 }
